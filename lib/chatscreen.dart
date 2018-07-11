@@ -14,12 +14,29 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _chatEnvironment (){
-    return new Container(
-      margin: const EdgeInsets.symmetric(horizontal:8.0),
-      child: new TextField(
-        decoration: new InputDecoration.collapsed(hintText: "Start typing ..."),
-        controller: _chatController,
-        onSubmitted: _handleSubmit,
+    return IconTheme(
+      data: new IconThemeData(color: Colors.blue),
+          child: new Container(
+        margin: const EdgeInsets.symmetric(horizontal:8.0),
+        child: new Row(
+          children: <Widget>[
+            new Flexible(
+              child: new TextField(
+                decoration: new InputDecoration.collapsed(hintText: "Start typing ..."),
+                controller: _chatController,
+                onSubmitted: _handleSubmit,
+              ),
+            ),
+            new Container(
+              margin: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: new IconButton(
+                icon: new Icon(Icons.send),
+                onPressed: ()=> _handleSubmit(_chatController.text),
+              ),
+            )
+          ],
+        ),
+
       ),
     );
   }
