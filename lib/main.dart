@@ -8,7 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Chat',
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Chats',
       home: new HomePage(),
       
       ); 
